@@ -13,7 +13,8 @@ class MenuController
     puts "2 - Create an Entry"
     puts "3 - Search For an Entry"
     puts "4 - Import Entries From a CSV"
-    puts "5 - Exit"
+    puts "5 - DEMOLISH"
+    puts "6 - Exit"
     print "Enter Your Selection: "
 
     selection = gets.to_i
@@ -36,6 +37,11 @@ class MenuController
         read_csv
         main_menu
       when 5
+        system "clear"
+        @address_book.demolish
+        puts "DEMOLISHED"
+        main_menu 
+      when 6
         puts "Good-bye!"
         exit(0)
       else

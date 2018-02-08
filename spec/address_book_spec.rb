@@ -48,13 +48,16 @@ RSpec.describe AddressBook do
     end
   end
 
-    #it "initializes entries as an array" do
-      #expect(book.entries)
-    #end
+  describe "#demolish" do
+    it "should delete all entries do" do
+      book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
+      book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
+      book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
 
-    #it "initializes entries as empty" do
-      #expect(book.entries.size).to eq(0)
-    #end
+      book.demolish 
+      expect(book.entries.size).to eq 0
+    end
+  end
 
 
   describe "#add_entry" do
